@@ -22,5 +22,5 @@ COPY .env.example .env.example
 # Install the package and runtime dependencies
 RUN pip install --no-cache-dir .
 
-# Default command to run the MCP server using stdio transport
-CMD ["mcp", "run", "src/intervals_mcp_server/server.py"]
+# Run the MCP server; transport is selected by MCP_TRANSPORT (default: stdio)
+CMD ["python", "src/intervals_mcp_server/server.py"]
